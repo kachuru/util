@@ -1,0 +1,22 @@
+{
+    "name": "kachuru/util",
+    "description": "Utility classes and methods that are fun to have around",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rupert Jones",
+            "email": "ru@kachuru.uk"
+        }
+    ],
+    "require": {
+    },
+    "require-dev": {
+        "phpspec/phpspec": "^6.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kachuru\\": "src/Kachuru/"
+        }
+    }
+}
