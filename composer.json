@@ -12,7 +12,28 @@
     "require": {
     },
     "require-dev": {
-        "phpspec/phpspec": "^6.1"
+        "phpspec/phpspec": "^6.1",
+        "squizlabs/php_codesniffer": "^3.5",
+        "phpstan/phpstan": "^0.12.8"
+    },
+    "scripts": {
+        "spec": [
+            "vendor/bin/phpspec run"
+        ],
+        "sniff": [
+            "vendor/bin/phpcs --standard=PSR2 src/"
+        ],
+        "fix": [
+            "vendor/bin/phpcbf --standard=PSR2 src/"
+        ],
+        "stan": [
+            "vendor/bin/phpstan analyse src/ --level 5"
+        ],
+        "test": [
+            "@sniff",
+            "@spec",
+            "@stan"
+        ]
     },
     "autoload": {
         "psr-4": {
