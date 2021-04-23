@@ -15,4 +15,17 @@ class Math
     {
         return self::factorial($number);
     }
+
+    public function getBytes(int $bytes): string
+    {
+        foreach (['KiB', 'MiB', 'GiB', 'TiB'] as $size) {
+            $bytes = bcdiv((string) $bytes, '1024', 2);
+
+            if ($bytes < 1024) {
+                break;
+            }
+        }
+
+        return $bytes . $size;
+    }
 }
