@@ -9,6 +9,9 @@
             "email": "ru@kachuru.uk"
         }
     ],
+    "require": {
+        "php": "^7.4"
+    },
     "require-dev": {
         "phpspec/phpspec": "^6.1",
         "squizlabs/php_codesniffer": "^3.5",
