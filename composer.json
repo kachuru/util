@@ -10,14 +10,15 @@
         }
     ],
     "require": {
-        "php": "^7.4"
+        "php": ">=7.4"
     },
     "require-dev": {
         "phpspec/phpspec": "^6.1",
         "squizlabs/php_codesniffer": "^3.5",
         "phpstan/phpstan": "^0.12.8",
         "mikey179/vfsstream": "^1.6",
-        "karriere/phpspec-matchers": "^3.0"
+        "karriere/phpspec-matchers": "^3.0",
+        "phpcompatibility/php-compatibility": "^9.3"
     },
     "scripts": {
         "spec": [
@@ -29,11 +30,16 @@
         "fix": [
             "vendor/bin/phpcbf --standard=PSR2 src/"
         ],
+        "compatiblity": [
+            "vendor/bin/phpcs -s --standard=vendor/phpcompatibility/php-compatibility/PHPCompatibility/ --runtime-set testVersion 7.4- src/",
+            "vendor/bin/phpcs -s --standard=vendor/phpcompatibility/php-compatibility/PHPCompatibility/ --runtime-set testVersion 8.0- src/"
+        ],
         "stan": [
             "vendor/bin/phpstan analyse src/ --level 5"
         ],
         "test": [
             "@sniff",
+            "@compatibility",
             "@spec",
             "@stan"
         ]
