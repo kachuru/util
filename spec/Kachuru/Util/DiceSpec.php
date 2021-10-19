@@ -43,4 +43,11 @@ class DiceSpec extends ObjectBehavior
             $this->roll('2d4-1')->shouldBeAnyOf(0, 1, 2, 3, 4, 5, 6, 7);
         }
     }
+
+    function it_applies_a_modifier_26plus2()
+    {
+        for ($i = 0; $i < self::ROLL_ATTEMPTS; $i++) {
+            $this->roll('d6+2')->shouldBeAnyOf(3, 4, 5, 6, 7, 8);
+        }
+    }
 }
