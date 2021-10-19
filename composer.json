@@ -30,7 +30,7 @@
         "fix": [
             "vendor/bin/phpcbf --standard=PSR2 src/"
         ],
-        "compatiblity": [
+        "compatibility": [
             "vendor/bin/phpcs -s --standard=vendor/phpcompatibility/php-compatibility/PHPCompatibility/ --runtime-set testVersion 7.4- src/",
             "vendor/bin/phpcs -s --standard=vendor/phpcompatibility/php-compatibility/PHPCompatibility/ --runtime-set testVersion 8.0- src/"
         ],
