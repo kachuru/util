@@ -2,7 +2,6 @@
 
 namespace spec\Kachuru\Util;
 
-use Kachuru\Util\Math;
 use PhpSpec\ObjectBehavior;
 
 class MathSpec extends ObjectBehavior

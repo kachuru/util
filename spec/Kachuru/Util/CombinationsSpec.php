@@ -3,11 +3,18 @@
 namespace spec\Kachuru\Util;
 
 use Kachuru\Util\Combinations;
+use Kachuru\Util\Math;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
 class CombinationsSpec extends ObjectBehavior
 {
+    public function let()
+    {
+        $math = new Math();
+        $this->beConstructedWith($math);
+    }
+
     function it_returns_empty_array_for_no_input()
     {
         $this->calculate([], 0)->shouldReturn([]);

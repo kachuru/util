@@ -8,7 +8,7 @@ use Kachuru\Util\Exception\InvalidDiceDefinitionException;
 
 class Dice
 {
-    public function roll($definition = 'd6'): int
+    public function roll(string $definition = 'd6'): int
     {
         if (!preg_match('/^(?P<times>[0-9]*)d(?P<sides>[0-9]+)(?P<modifier>(\+|\-)[0-9]*)?$/i', $definition, $result)) {
             throw new InvalidDiceDefinitionException(sprintf('The definition "%s" could not be parsed', $definition));
@@ -25,7 +25,7 @@ class Dice
 
     private function doRoll(int $sides, int $times = 1): int
     {
-        return array_reduce(range(1, $times), function ($carry) use ($sides): int {
+        return (int) array_reduce(range(1, $times), function ($carry) use ($sides): int {
             return $carry + mt_rand(1, $sides);
         });
     }
