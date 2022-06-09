@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "php": ">=7.4"
+        "php": ">=7.4|>=8.0|>=8.1"
     },
     "require-dev": {
         "phpspec/phpspec": "^6.1",
@@ -32,7 +32,8 @@
         ],
         "compatibility": [
             "vendor/bin/phpcs -s --standard=vendor/phpcompatibility/php-compatibility/PHPCompatibility/ --runtime-set testVersion 7.4- src/",
-            "vendor/bin/phpcs -s --standard=vendor/phpcompatibility/php-compatibility/PHPCompatibility/ --runtime-set testVersion 8.0- src/"
+            "vendor/bin/phpcs -s --standard=vendor/phpcompatibility/php-compatibility/PHPCompatibility/ --runtime-set testVersion 8.0- src/",
+            "vendor/bin/phpcs -s --standard=vendor/phpcompatibility/php-compatibility/PHPCompatibility/ --runtime-set testVersion 8.1- src/"
         ],
         "stan": [
             "vendor/bin/phpstan analyse src/ --level max"
