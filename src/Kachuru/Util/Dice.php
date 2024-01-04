@@ -8,9 +8,11 @@ use Kachuru\Util\Exception\InvalidDiceDefinitionException;
 
 class Dice
 {
+    private const DICE_DEFINITION_PATTERN = '^(?P<times>[0-9]*)d?(?P<sides>[0-9]+)(?P<modifier>(\+|\-)[0-9]*)?$';
+
     public function roll(string $definition = 'd6'): int
     {
-        if (!preg_match('/^(?P<times>[0-9]*)d?(?P<sides>[0-9]+)(?P<modifier>(\+|\-)[0-9]*)?$/i', $definition, $result)) {
+        if (!preg_match(sprintf('/%s/i', self::DICE_DEFINITION_PATTERN), $definition, $result)) {
             throw new InvalidDiceDefinitionException(sprintf('The definition "%s" could not be parsed', $definition));
         }
 
