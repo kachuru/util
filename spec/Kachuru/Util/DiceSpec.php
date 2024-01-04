@@ -51,6 +51,11 @@ class DiceSpec extends ObjectBehavior
         }
     }
 
+    function it_does_not_need_the_d()
+    {
+        $this->roll('6')->shouldBeAnyOf([1, 2, 3, 4, 5, 6]);
+    }
+
     public function getMatchers(): array
     {
         return [
