@@ -44,12 +44,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Kachuru\\": "src/Kachuru/"
+            "Kachuru\\Util\\": "src/Kachuru/Util/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "spec\\Kachuru\\": "spec/Kachuru/"
+            "spec\\Kachuru\\Util\\": "spec/Kachuru/Util/"
         }
     },
     "config": {
