@@ -4,20 +4,18 @@ declare(strict_types=1);
 
 namespace Kachuru\Util;
 
-class Combinations
+readonly class Combinations
 {
-    private Math $math;
-
-    public function __construct(Math $math)
-    {
-        $this->math = $math;
+    public function __construct(
+        private Math $math
+    ) {
     }
 
     /**
-     * @param array<mixed> $source
+     * @param array<int, mixed> $source
      * @param int $combinationSeed
      *
-     * @return array<mixed>
+     * @return array<int, mixed>
      */
     public function calculate(array $source, int $combinationSeed): array
     {
@@ -30,10 +28,10 @@ class Combinations
     }
 
     /**
-     * @param array<mixed> $source
+     * @param array<int, mixed> $source
      * @param int $combinationSeed
      *
-     * @return array<mixed>
+     * @return array<int, mixed>
      */
     private function slice(array $source, int $combinationSeed): array
     {
@@ -47,10 +45,10 @@ class Combinations
     }
 
     /**
-     * @param array<mixed> $elements
+     * @param array<int, mixed> $elements
      * @param int $times
      *
-     * @return array<mixed>
+     * @return array<int, mixed>
      */
     private function rotate(array $elements, int $times = 1): array
     {
