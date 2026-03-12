@@ -12,10 +12,10 @@ readonly class Combinations
     }
 
     /**
-     * @param array<int, mixed> $source
+     * @param mixed[] $source
      * @param int $combinationSeed
      *
-     * @return array<int, mixed>
+     * @return mixed[]
      */
     public function calculate(array $source, int $combinationSeed): array
     {
@@ -28,10 +28,10 @@ readonly class Combinations
     }
 
     /**
-     * @param array<int, mixed> $source
+     * @param mixed[] $source
      * @param int $combinationSeed
      *
-     * @return array<int, mixed>
+     * @return mixed[]
      */
     private function slice(array $source, int $combinationSeed): array
     {
@@ -45,10 +45,10 @@ readonly class Combinations
     }
 
     /**
-     * @param array<int, mixed> $elements
+     * @param mixed[] $elements
      * @param int $times
      *
-     * @return array<int, mixed>
+     * @return mixed[]
      */
     private function rotate(array $elements, int $times = 1): array
     {
